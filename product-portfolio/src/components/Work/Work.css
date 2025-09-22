@@ -1,0 +1,289 @@
+.work-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.work-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.work-card-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.work-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .work-card-overlay {
+  opacity: 1;
+}
+
+.work-card-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.work-action-btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.work-card-body {
+  padding: 1.5rem;
+}
+
+.work-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.work-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.work-card-category {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.work-card-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.work-card-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+  .work-card-image {
+    height: 220px;
+  }
+  
+  .work-card-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .work-section {
+    padding: 70px 0;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .work-card-image {
+    height: 200px;
+  }
+  
+  .work-card-body {
+    padding: 1.25rem;
+  }
+  
+  .work-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .work-card-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .work-section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .work-card-image {
+    height: 180px;
+  }
+  
+  .work-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .work-card-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .work-action-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .work-card-body {
+    padding: 1rem;
+  }
+  
+  .work-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .work-card-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .work-section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .work-card-image {
+    height: 160px;
+  }
+  
+  .work-card-body {
+    padding: 0.8rem;
+  }
+  
+  .work-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .work-card-description {
+    font-size: 0.85rem;
+  }
+  
+  .work-card-category {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .work-card-image {
+    height: 140px;
+  }
+  
+  .work-card-title {
+    font-size: 1rem;
+  }
+  
+  .work-card-description {
+    font-size: 0.8rem;
+  }
+}

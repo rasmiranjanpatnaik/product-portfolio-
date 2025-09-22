@@ -1,0 +1,147 @@
+.about-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.about-content {
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-text a:hover {
+  text-decoration: underline;
+}
+
+.about-image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+  .about-title {
+    font-size: 2.3rem;
+  }
+  
+  .about-text {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .about-section {
+    padding: 70px 0;
+  }
+  
+  .about-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .about-image-container {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .about-title {
+    font-size: 1.75rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .about-image-container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-section {
+    padding: 50px 0;
+  }
+  
+  .about-title {
+    font-size: 1.6rem;
+  }
+  
+  .about-text {
+    font-size: 0.95rem;
+  }
+  
+  .about-text p {
+    margin-bottom: 1.25rem;
+  }
+  
+  .about-image-container {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-text {
+    font-size: 0.9rem;
+  }
+  
+  .about-image-container {
+    max-width: 300px;
+  }
+}
