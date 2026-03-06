@@ -1,9 +1,0 @@
-[build]
-from="/*"
-to="/index.html"
-base = "/"
-
-[[redirects]]
-from="/*"
-to="/index.html"
-status=200

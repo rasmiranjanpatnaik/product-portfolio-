@@ -1,7 +1,7 @@
+/* Header aligned with hero: diagonal split — left light grey, right black */
 .custom-navbar {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(105deg, #e5e5e5 0%, #e5e5e5 56%, #111 56%, #111 100%);
+  border-bottom: none;
   transition: all 0.3s ease;
   padding: 1rem 0;
 }
@@ -9,17 +9,18 @@
 .navbar-brand-custom {
   font-weight: 600;
   font-size: 1.25rem;
-  color: #333 !important;
+  color: #1a1a1a !important;
   text-decoration: none;
 }
 
 .navbar-brand-custom:hover {
-  color: #007bff !important;
+  color: #1a1a1a !important;
+  opacity: 0.85;
 }
 
 .nav-link-custom {
   font-weight: 500;
-  color: #666 !important;
+  color: #fff !important;
   margin: 0 0.5rem;
   padding: 0.5rem 1rem !important;
   border-radius: 6px;
@@ -28,30 +29,37 @@
 }
 
 .nav-link-custom:hover {
-  color: #007bff !important;
-  background-color: rgba(0, 123, 255, 0.1);
+  color: #fff !important;
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .resume-nav-link {
-  background: linear-gradient(135deg, #28a745, #20c997) !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #111 !important;
   border-radius: 25px !important;
   font-weight: 600 !important;
   padding: 0.6rem 1.2rem !important;
   margin-left: 0.5rem !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
 }
 
 .resume-nav-link:hover {
-  background: linear-gradient(135deg, #218838, #1ea085) !important;
-  color: #fff !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #111 !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4) !important;
 }
 
 .resume-nav-link i {
   font-size: 0.9rem;
+}
+
+/* Toggler visible on dark right half */
+.custom-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Responsive Design */
@@ -69,6 +77,14 @@
 @media (max-width: 991.98px) {
   .custom-navbar {
     padding: 0.5rem 0;
+  }
+  
+  /* Collapsed menu: solid dark background so white links are readable */
+  .custom-navbar .navbar-collapse {
+    background: #111;
+    margin: 0.5rem -0.75rem -0.5rem -0.75rem;
+    padding: 0.75rem 0.75rem 1rem;
+    border-radius: 0 0 8px 8px;
   }
   
   .navbar-brand-custom {

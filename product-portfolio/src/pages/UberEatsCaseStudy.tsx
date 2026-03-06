@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ScrollReveal from '../components/ScrollReveal';
 import './UberEatsCaseStudy.css';
 
 interface UserStory {
@@ -81,101 +82,108 @@ const UberEatsCaseStudy: React.FC = () => {
   return (
     <div className="case-study-page">
       {/* Hero Section */}
-      <section 
-        className="case-study-hero"
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/uberherocasestudy-bg.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <Container>
-          <Row>
-            <Col lg={6} md={12}>
-              <div className="case-study-hero-content">
-                <div className="breadcrumb">
-                  <Link to="/" className="breadcrumb-link">Home</Link>
-                  <span className="breadcrumb-separator">/</span>
+      <ScrollReveal visibleOnLoad>
+        <section 
+          className="case-study-hero"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/images/uberherocasestudy-bg.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <Container>
+            <Row>
+              <Col lg={6} md={12}>
+                <div className="case-study-hero-content">
+                  <div className="breadcrumb">
+                    <Link to="/" className="breadcrumb-link">Home</Link>
+                    <span className="breadcrumb-separator">/</span>
+                  </div>
+                  
+                  <h1 className="case-study-title">
+                    Uber Eats: Redesigning the food delivery experience
+                  </h1>
+                  
+                  <p className="case-study-subtitle">
+                    Re-designing the magic of food to understand the pain points & how to solve them.
+                  </p>
+                  
                 </div>
-                
-                <h1 className="case-study-title">
-                  Uber Eats: Redesigning the food delivery experience
-                </h1>
-                
-                <p className="case-study-subtitle">
-                  Re-designing the magic of food to understand the pain points & how to solve them.
-                </p>
-                
-              </div>
-            </Col>
-            
-          </Row>
-        </Container>
-      </section>
+              </Col>
+              
+            </Row>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* Context Section */}
-      <section className="case-study-section context-section">
-        <Container>
-          <Row>
-            <Col lg={10} className="mx-auto">
-              <div className="context-header">
-                <span className="context-label">CONTEXT</span>
-                <h2 className="context-title">How do people eat?</h2>
-              </div>
-              
-              <div className="context-content">
-                <div className="context-description">
-                  <p>
-                    In today's world, people eat in various ways, ranging from less convenient to more 
-                    convenient options. Some people cook unprepared foods while others prefer 
-                    prepared foods that are ready to eat. Uber Eats has already developed solutions for 
-                    three main categories of eating options:
-                  </p>
-                  <ol>
-                    <li>On-demand restaurant delivery</li>
-                    <li>Eating out / ordering pickup</li>
-                    <li>Online grocery delivery</li>
-                  </ol>
-                  <p className="context-question">
-                    In this case study, I aimed to answer <strong>whether or not Uber Eats should build a 
-                    solution for a 4th way of eating: Packaged Meals</strong>.
-                  </p>
+      <ScrollReveal>
+        <section className="case-study-section context-section">
+          <Container>
+            <Row>
+              <Col lg={10} className="mx-auto">
+                <div className="context-header">
+                  <span className="context-label">CONTEXT</span>
+                  <h2 className="context-title">How do people eat?</h2>
                 </div>
                 
-                <div className="food-spectrum">
-                  <img 
-                    src="/images/Ubercasecontext.webp" 
-                    alt="Food consumption spectrum showing how people eat from less convenient to more convenient options" 
-                    className="context-diagram"
-                  />
+                <div className="context-content">
+                  <div className="context-description">
+                    <p>
+                      In today's world, people eat in various ways, ranging from less convenient to more 
+                      convenient options. Some people cook unprepared foods while others prefer 
+                      prepared foods that are ready to eat. Uber Eats has already developed solutions for 
+                      three main categories of eating options:
+                    </p>
+                    <ol>
+                      <li>On-demand restaurant delivery</li>
+                      <li>Eating out / ordering pickup</li>
+                      <li>Online grocery delivery</li>
+                    </ol>
+                    <p className="context-question">
+                      In this case study, I aimed to answer <strong>whether or not Uber Eats should build a 
+                      solution for a 4th way of eating: Packaged Meals</strong>.
+                    </p>
+                  </div>
+                  
+                  <div className="food-spectrum">
+                    <img 
+                      src="/images/Ubercasecontext.webp" 
+                      alt="Food consumption spectrum showing how people eat from less convenient to more convenient options" 
+                      className="context-diagram"
+                    />
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* Hypothesis Section */}
-      <section className="hypothesis-section">
-        <Container>
-          <Row>
-            <Col lg={10} className="mx-auto">
-              <div className="hypothesis-header">
-                <span className="hypothesis-label">HYPOTHESIS</span>
-              </div>
-              
-              <div className="hypothesis-content">
-                <h2 className="hypothesis-statement">
-                  If Uber Eats offers Packaged Meal delivery, then they will increase retention amongst their user base.
-                </h2>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <ScrollReveal>
+        <section className="hypothesis-section">
+          <Container>
+            <Row>
+              <Col lg={10} className="mx-auto">
+                <div className="hypothesis-header">
+                  <span className="hypothesis-label">HYPOTHESIS</span>
+                </div>
+                
+                <div className="hypothesis-content">
+                  <h2 className="hypothesis-statement">
+                    If Uber Eats offers Packaged Meal delivery, then they will increase retention amongst their user base.
+                  </h2>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </ScrollReveal>
 
       {/* The Market Section */}
+      <ScrollReveal>
       <section className="market-section">
         <Container>
           <Row className="align-items-center">
@@ -230,8 +238,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Container>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* The Audience Section */}
+      <ScrollReveal>
       <section className="audience-section">
         <Container>
           <Row>
@@ -318,8 +328,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* User Insights Section */}
+      <ScrollReveal>
       <section className="user-insights-section">
         <Container>
           <Row>
@@ -402,8 +414,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* User Journey Section */}
+      <ScrollReveal>
       <section className="user-journey-section">
         <Container>
           <Row>
@@ -510,8 +524,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* The Marketplace Section */}
+      <ScrollReveal>
       <section className="marketplace-section">
         <Container>
           <Row>
@@ -603,8 +619,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* The Big Takeaway Section */}
+      <ScrollReveal>
       <section className="big-takeaway-section">
         <Container>
           <Row>
@@ -654,8 +672,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* The Goal Section */}
+      <ScrollReveal>
       <section className="goal-section">
         <Container>
           <Row>
@@ -674,8 +694,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* Feature Prioritization & MVP Definition Section */}
+      <ScrollReveal>
       <section className="mvp-section">
         <Container>
           <Row>
@@ -701,8 +723,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* Solutions Explored Section */}
+      <ScrollReveal>
       <section className="solutions-section">
         <Container>
           <Row>
@@ -790,8 +814,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* Evaluating Solutions Section */}
+      <ScrollReveal>
       <section className="evaluating-section">
         <Container>
           <Row>
@@ -823,8 +849,10 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* Final Solution Section */}
+      <ScrollReveal>
       <section 
         className="final-solution-section"
         style={{
@@ -896,6 +924,7 @@ const UberEatsCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
 
       {/* User Experience Section */}
       <section className="user-experience-section">
@@ -1121,6 +1150,7 @@ const UberEatsCaseStudy: React.FC = () => {
       </section>
 
       {/* Final Thoughts Section */}
+      <ScrollReveal>
       <section className="final-thoughts-section">
         <Container>
           <div className="final-thoughts-content">
@@ -1168,7 +1198,7 @@ const UberEatsCaseStudy: React.FC = () => {
           </div>
         </Container>
       </section>
-
+      </ScrollReveal>
 
       {/* Navigation */}
       <section className="case-study-navigation">

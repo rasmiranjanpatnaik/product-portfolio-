@@ -24,6 +24,8 @@ const CaseStudies: React.FC = () => {
                     src={caseStudy.image} 
                     alt={caseStudy.title}
                     className="card-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 

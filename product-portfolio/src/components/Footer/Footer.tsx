@@ -1,88 +1,106 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Container } from 'react-bootstrap';
 import './Footer.css';
+
+const SCROLL_THRESHOLD = 400;
+const MOBILE_BREAKPOINT = 768;
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(() => typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowBackToTop(window.scrollY > SCROLL_THRESHOLD);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      setIsMobileView(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterInView(entry.isIntersecting),
+      { threshold: 0.1, rootMargin: '0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const showFixedBackToTop = isMobileView && showBackToTop && !footerInView;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="footer-section">
-      <Container>
-        <Row className="footer-main">
-          <Col lg={4} md={12} className="footer-left">
-            <h2 className="footer-name">Rasmi Ranjan Patnaik</h2>
+    <>
+      {/* Fixed Back to Top — mobile only: appears on scroll, hidden when footer is in view */}
+      <div
+        className={`footer-back-to-top-fixed ${showFixedBackToTop ? 'footer-back-to-top-visible' : ''}`}
+        aria-hidden={!showFixedBackToTop}
+      >
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className="footer-back-to-top"
+          aria-label="Back to top"
+        >
+          <span className="footer-back-to-top-icon">↑</span>
+          <span className="footer-back-to-top-text">BACK TO TOP</span>
+        </button>
+      </div>
+
+      <footer ref={footerRef} className="footer-section">
+        <Container>
+          <div className="footer-content">
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="footer-back-to-top"
+              aria-label="Back to top"
+            >
+              <span className="footer-back-to-top-icon">↑</span>
+              <span className="footer-back-to-top-text">BACK TO TOP</span>
+            </button>
+
             <div className="footer-social-icons">
-              <a href="https://www.linkedin.com/in/rasmiranjanpatnaik/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="https://youtube.com/@rasmiranjanpatnaik" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <i className="fab fa-youtube"></i>
-              </a>
-              <a href="https://medium.com/@patnaikrasmiranjan6" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <i className="fab fa-medium"></i>
-              </a>
-              <a href="" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
-          </Col>
-          
-          <Col lg={8} md={12} className="footer-right">
-            <div className="footer-columns">
-              <div className="footer-column">
-                <h6 className="footer-column-title">Work With Me</h6>
-                <ul className="footer-links">
-                  <li><a href="#contact">Contact Me</a></li>
-                  <li><a href="#work">Product Careerlyst</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-column">
-                <h6 className="footer-column-title">My Work</h6>
-                <ul className="footer-links">
-                  <li><a href="#work">Grow Therapy</a></li>
-                  <li><a href="#work">SageSpot</a></li>
-                  <li><a href="#work">Squarespace</a></li>
-                  <li><a href="#work">SeatGeek</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-column">
-                <h6 className="footer-column-title">Side Projects</h6>
-                <ul className="footer-links">
-                  <li><a href="#work">Braise</a></li>
-                  <li><a href="#work">Chin Up!</a></li>
-                  <li><a href="#work">Networking Assistant</a></li>
-                  <li><a href="#work">Stand Up For Change</a></li>
-                </ul>
-              </div>
-              
-              <div className="footer-column">
-                <h6 className="footer-column-title">Case Studies</h6>
-                <ul className="footer-links">
-                  <li><a href="#case-studies">Uber Eats</a></li>
-                  <li><a href="#case-studies">PayPal</a></li>
-                </ul>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        
-        <div className="footer-copyright-section">
-          <Container>
-            <Row>
-              <Col>
-                <div className="footer-copyright-content">
-                  <p className="footer-copyright-text">
-                    © {currentYear} Rasmi Ranjan Patnaik. All rights reserved.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+            <a href="https://www.linkedin.com/in/rasmiranjanpatnaik/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com/@rasmiranjanpatnaik" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="YouTube">
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a href="https://medium.com/@patnaikrasmiranjan6" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Medium">
+              <i className="fab fa-medium-m"></i>
+            </a>
+            <a href="mailto:patnaikrasmiranjan6@gmail.com" className="social-icon" aria-label="Email">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
+
+          <p className="footer-copyright-text">
+            © {currentYear} Rasmi Ranjan Patnaik. All rights reserved.
+          </p>
         </div>
       </Container>
+      <div className="footer-accent-line" aria-hidden="true" />
     </footer>
+    </>
   );
 };
 

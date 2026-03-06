@@ -23,6 +23,8 @@ const Work: React.FC = () => {
                     src={project.image} 
                     alt={project.title}
                     className="card-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="work-card-overlay">
                     <div className="work-card-actions">

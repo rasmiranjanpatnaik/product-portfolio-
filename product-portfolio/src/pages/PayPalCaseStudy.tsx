@@ -1,32 +1,45 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ScrollReveal from '../components/ScrollReveal';
 import './PayPalCaseStudy.css';
 
 const PayPalCaseStudy: React.FC = () => {
   return (
     <div className="case-study-page">
+      <ScrollReveal visibleOnLoad>
       {/* Hero Section */}
-      <section className="case-study-hero">
-        <img 
-          src="/images/paypal-wood-bg.jpg" 
-          alt="Wooden background" 
-          className="background-image"
-        />
-        <div className="hero-content">
-          <div className="hero-text-overlay">
-            <div className="breadcrumb">
-              <Link to="/" className="breadcrumb-link">Home</Link>
-              <span className="breadcrumb-separator">/</span>
-              <span className="breadcrumb-current">PayPal Case Study</span>
-            </div>
-            
-            <div className="project-info">
-              <span className="project-company">PayPal • 2022</span>
-              <h1 className="project-title">Adding Universal Search to the PayPal app</h1>
-            </div>
-          </div>
-        </div>
+      <section 
+        className="case-study-hero"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/paypal-wood-bg.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <Container>
+          <Row>
+            <Col lg={6} md={12}>
+              <div className="case-study-hero-content">
+                <div className="breadcrumb">
+                  <Link to="/" className="breadcrumb-link">Home</Link>
+                  <span className="breadcrumb-separator">/</span>
+                  <span className="breadcrumb-current">PayPal Case Study</span>
+                </div>
+                
+                <h1 className="case-study-title">
+                  Adding Universal Search to the PayPal app
+                </h1>
+                
+                <p className="case-study-subtitle">
+                  PayPal • 2022 &mdash; designing a universal search experience that helps users complete
+                  core money tasks faster and with less friction.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       {/* User Journey Section */}
@@ -1080,6 +1093,7 @@ const PayPalCaseStudy: React.FC = () => {
           </Row>
         </Container>
       </section>
+      </ScrollReveal>
     </div>
   );
 };

@@ -1,51 +1,41 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './About.css';
+
+const shortNote =
+  "I'm an AI Product Manager at Scaler, where I drive product initiatives that sit at the intersection of user needs and AI capabilities. " +
+  "I focus on discovery, metrics, and cross-functional execution to ship impact—from LLM-powered experiences to workflow automation and beyond.";
+
+const scrollToCaseStudies = (e: React.MouseEvent) => {
+  if (window.location.pathname === '/') {
+    e.preventDefault();
+    document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="about-section">
-      <Container>
-        <Row>
-          <Col lg={6} md={12} className="about-content">
-            <h2 className="about-title">About me</h2>
-            <div className="about-text">
-              <p>
-                I started at Computer Science at the College of KIIT University , but 
-                quickly realized my passion was more in understanding user needs and business 
-                problems. I pivoted my studies from engineering to a more business-oriented 
-                curriculum, leading to a degree in Product Management and Design.
-              </p>
-              
-              <p>
-                I’m Rasmi Ranjan Patnaik, currently an SDE Frontend Developer (Intern) at Shadowfax. While my journey began in engineering, I discovered that my real passion lies in connecting technology with business strategy to build products that truly solve user problems. Product Management excites me because it’s about understanding customer needs at a deep level, collaborating with diverse teams, and driving innovations that deliver meaningful impact to both users and the business.
-              </p>
-              
-              <p>
-               What I bring to the table is a blend of technical expertise and product thinking. My experience as an SDE means I can bridge the gap between engineering and business, ensuring every solution is not only feasible but strategically sound. I thrive on collaboration, having worked side-by-side with product teams to deliver impactful features at Shadowfax. I’m committed to uncovering what users truly need—not just what they say—and advocating for their satisfaction throughout the product lifecycle.
-              </p>
-              
-              <p>
-                You should consider me for your team because I offer a fresh perspective, an outcome-driven approach, and a genuine excitement for building products that make a difference. My ability to learn quickly, inspire teams, and focus on measurable results would help take your product initiatives to the next level. I’m ready to help create products that users love and drive real business growth.
-              </p>
-              
-              <p>
-                <strong>Interested in working together?</strong> <a href="#contact">Drop me a line</a>.
-              </p>
-            </div>
-          </Col>
-          
-          <Col lg={6} md={12} className="about-image-col">
-            <div className="about-image-container">
-              <img 
-                src="/images/about-workspace.png" 
-                alt="Rasmi's workspace" 
-                className="about-image"
-              />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    <section id="about" className="about-section" aria-label="About me">
+      <div className="about-section-inner">
+        <h2 className="about-section-title-wrap">
+          <span className="about-section-title">ABOUT ME</span>
+        </h2>
+        <p className="about-section-note">{shortNote}</p>
+        <Link
+          to="/#case-studies"
+          className="about-explore-btn"
+          onClick={scrollToCaseStudies}
+          aria-label="Explore case studies"
+        >
+          <span className="about-explore-text">| EXPLORE |</span>
+        </Link>
+        <div className="about-wavy-wrap" aria-hidden="true">
+          <svg className="about-wavy" viewBox="0 0 400 16" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 5 Q100 0, 200 5 T400 5" stroke="currentColor" strokeWidth="1.2" fill="none" />
+            <path d="M0 11 Q100 16, 200 11 T400 11" stroke="currentColor" strokeWidth="1.2" fill="none" />
+          </svg>
+        </div>
+      </div>
     </section>
   );
 };

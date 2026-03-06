@@ -1,11 +1,18 @@
-Uber Kids Case Study Specific Styles
+/* Uber Kids Case Study Specific Styles */
 .case-study-page {
   padding-top: 80px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Hero Section with Uber Kids Theme */
 .case-study-hero {
   padding: 60px 0;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   color: white;
 }

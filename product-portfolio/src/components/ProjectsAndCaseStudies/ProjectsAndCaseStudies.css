@@ -1,0 +1,284 @@
+/* Projects & Case Studies: dark section, filter bar (PROJECTS / CASE STUDIES), 3-col grid, footer */
+.projects-case-section {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 0 0 3.5rem;
+}
+
+.projects-case-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.projects-case-nav-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  font-family: inherit;
+  transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s ease;
+}
+
+.projects-case-nav-btn::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #888, transparent);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-case-nav-btn:hover {
+  color: #fff;
+}
+
+.projects-case-nav-btn.is-active {
+  color: #fff;
+}
+
+.projects-case-nav-btn.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.projects-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 320px;
+}
+
+/* Staggered enter animation when filter changes */
+.projects-case-card {
+  margin: 0;
+  opacity: 0;
+  animation: projectsCaseEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes projectsCaseEnter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.projects-case-card-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.projects-case-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-case-card:hover .projects-case-card-image img {
+  transform: scale(1.05);
+}
+
+.projects-case-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem 1.25rem 1.5rem;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-case-card:hover .projects-case-card-overlay {
+  opacity: 1;
+}
+
+.projects-case-card-meta {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: lowercase;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.projects-case-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.projects-case-card-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.projects-case-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.projects-case-action-btn {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: inherit;
+}
+
+a.projects-case-action-btn:hover {
+  background: #fff;
+  color: #1f1f1f;
+}
+
+.projects-case-action-btn.is-disabled {
+  cursor: default;
+  opacity: 0.7;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.projects-case-action-sep {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.projects-case-footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 2.5rem 0 0;
+  padding: 0 1rem;
+}
+
+@media (max-width: 992px) {
+  .projects-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-case-nav {
+    gap: 1.25rem;
+    padding: 1.25rem 0.75rem;
+  }
+
+  .projects-case-nav-btn {
+    font-size: 0.8rem;
+  }
+
+  .projects-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-case-card-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  }
+
+  .projects-case-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-case-nav {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .projects-case-nav-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .projects-case-card-title {
+    font-size: 1rem;
+  }
+
+  .projects-case-card-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .projects-case-card-overlay {
+    padding: 1rem 1rem 1.25rem;
+  }
+
+  .projects-case-footer {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .projects-case-section {
+    padding-bottom: 2.5rem;
+  }
+
+  .projects-case-nav {
+    gap: 0.75rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .projects-case-nav-btn {
+    font-size: 0.7rem;
+  }
+
+  .projects-case-card-title {
+    font-size: 0.95rem;
+  }
+
+  .projects-case-card-meta {
+    font-size: 0.65rem;
+  }
+
+  .projects-case-action-btn {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .projects-case-grid {
+    min-height: 280px;
+  }
+}

@@ -11,6 +11,38 @@ body {
   color: #333;
 }
 
+/* Prevent horizontal overflow on small screens */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive base: ensure containers and content scale */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -12,21 +12,18 @@ const Header: React.FC = () => {
     setExpanded(false);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    // If not on home page, navigate to home first
+  const scrollToSection = (sectionId: string, hash?: string) => {
+    const targetHash = hash || `#${sectionId}`;
     if (location.pathname !== '/') {
-      navigate('/');
+      navigate('/' + targetHash);
       setTimeout(() => {
         const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
     } else {
+      window.history.replaceState(null, '', window.location.pathname + targetHash);
       const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     handleNavClick();
   };
@@ -52,19 +49,31 @@ const Header: React.FC = () => {
         
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link 
-              onClick={() => scrollToSection('work')}
-              className="nav-link-custom"
-            >
-              Work
-            </Nav.Link>
-            <Nav.Link 
+            <Nav.Link
               onClick={() => scrollToSection('case-studies')}
               className="nav-link-custom"
             >
-              Case Studies
+              Portfolio
             </Nav.Link>
-            <Nav.Link 
+            <Nav.Link
+              onClick={() => scrollToSection('case-studies', '#case-studies-projects')}
+              className="nav-link-custom"
+            >
+              Project
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => scrollToSection('case-studies', '#case-studies-case-studies')}
+              className="nav-link-custom"
+            >
+              Case Study
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => scrollToSection('skills')}
+              className="nav-link-custom"
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link
               as={Link}
               to="/contact"
               className="nav-link-custom"
@@ -72,8 +81,8 @@ const Header: React.FC = () => {
             >
               Contact
             </Nav.Link>
-            <Nav.Link 
-              as={Link}
+            <Nav.Link
+                as={Link}
               to="/resume"
               className="nav-link-custom resume-nav-link"
               onClick={handleNavClick}
