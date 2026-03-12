@@ -72,6 +72,17 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Booking Conversion', value: '10% to 20%' },
       { label: 'User Retention', value: '60% to 80%' }
     ]
+  },
+  {
+    id: 'arattai',
+    title: 'Arattai vs WhatsApp',
+    subtitle: 'Competing in India’s messaging market',
+    description: 'How Arattai can differentiate from WhatsApp and drive adoption with a Made-in-India, privacy-first strategy.',
+    image: '/images/Gemini_Generated_Image_x9xpecx9xpecx9xp.png',
+    metrics: [
+      { label: 'MAU Target', value: '50M in 12 months' },
+      { label: 'D30 Retention', value: '>45%' }
+    ]
   }
 ];
 

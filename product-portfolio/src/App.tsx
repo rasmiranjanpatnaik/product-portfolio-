@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BackgroundAudio from './components/BackgroundAudio/BackgroundAudio';
 import PageTransition from './components/PageTransition';
 import './App.css';
 
@@ -11,11 +12,13 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const UberEatsCaseStudy = React.lazy(() => import('./pages/UberEatsCaseStudy'));
 const PayPalCaseStudy = React.lazy(() => import('./pages/PayPalCaseStudy'));
 const UberKidsCaseStudy = React.lazy(() => import('./pages/UberKidsCaseStudy'));
+const ArattaiCaseStudy = React.lazy(() => import('./pages/ArattaiCaseStudy'));
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <BackgroundAudio />
         <Header />
         <Suspense
           fallback={
@@ -70,6 +73,14 @@ function App() {
               element={
                 <PageTransition>
                   <UberKidsCaseStudy />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/case-study/arattai"
+              element={
+                <PageTransition>
+                  <ArattaiCaseStudy />
                 </PageTransition>
               }
             />

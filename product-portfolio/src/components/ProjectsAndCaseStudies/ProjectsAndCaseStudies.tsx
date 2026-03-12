@@ -9,6 +9,7 @@ const caseStudyRoute: Record<string, string> = {
   'uber-eats': '/case-study/uber-eats',
   paypal: '/case-study/paypal',
   'Uber Kid': '/case-study/uber-kids',
+  arattai: '/case-study/arattai',
 };
 
 const ProjectsAndCaseStudies: React.FC = () => {

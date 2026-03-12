@@ -85,6 +85,15 @@ const CaseStudies: React.FC = () => {
                         View Case Study
                       </Button>
                     </Link>
+                  ) : caseStudy.id === 'arattai' ? (
+                    <Link to="/case-study/arattai">
+                      <Button 
+                        variant="outline-primary" 
+                        className="case-study-btn"
+                      >
+                        View Case Study
+                      </Button>
+                    </Link>
                   ) : caseStudy.detailUrl ? (
                     <Button 
                       variant="outline-primary" 
