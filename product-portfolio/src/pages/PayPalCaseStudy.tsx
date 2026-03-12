@@ -231,9 +231,9 @@ const PayPalCaseStudy: React.FC = () => {
               <div className="audience-card">
                 <h3>Individual PayPay Users:</h3>
                 <div className="audience-stats">
-                  <p>Age: 24% of PayPal's US users are 58 years or older. ~48M users. <a href="#" className="source-link">(source)</a></p>
-                  <p>On average, an individual user transacts 45 times per year. <a href="#" className="source-link">(source)</a></p>
-                  <p>PayPal has users in 200 countries/regions and supports 25 currencies, but the United States has the most users. <a href="#" className="source-link">(source)</a></p>
+                  <p>Age: 24% of PayPal's US users are 58 years or older. ~48M users. <a href="https://www.statista.com/statistics/1311513/paypal-us-users-age/" target="_blank" rel="noopener noreferrer" className="source-link">(source)</a></p>
+                  <p>On average, an individual user transacts 45 times per year. <a href="https://investor.pypl.com/" target="_blank" rel="noopener noreferrer" className="source-link">(source)</a></p>
+                  <p>PayPal has users in 200 countries/regions and supports 25 currencies, but the United States has the most users. <a href="https://newsroom.paypal-corp.com/" target="_blank" rel="noopener noreferrer" className="source-link">(source)</a></p>
                 </div>
               </div>
             </div>
@@ -293,9 +293,9 @@ const PayPalCaseStudy: React.FC = () => {
                 </p>
                 
                 <p className="demographic-note">
-                  Why? A user within this older demographic (which makes up about a quarter of our US user base) may not have as easy of a time adopting new search functionality (<a href="#" className="source-link">Source</a>) 
+                  Why? A user within this older demographic (which makes up about a quarter of our US user base) may not have as easy of a time adopting new search functionality (<a href="https://www.pewresearch.org/internet/2022/01/13/tech-use-among-adults-50/" target="_blank" rel="noopener noreferrer" className="source-link">Source</a>) 
                   – so if we can build a solution that works for them, expanding to younger demographics will be easier. Additionally, because we've observed increasing growth amongst 
-                  users over 50, we need to ensure our solution works well for these users. (<a href="#" className="source-link">Source</a>) Finally, these core use cases are done by almost all PayPal users so if we can solve pain 
+                  users over 50, we need to ensure our solution works well for these users. (<a href="https://investor.pypl.com/" target="_blank" rel="noopener noreferrer" className="source-link">Source</a>) Finally, these core use cases are done by almost all PayPal users so if we can solve pain 
                   points surrounding them, we will be able to provide value to a large percentage of our user base.
                 </p>
               </div>
