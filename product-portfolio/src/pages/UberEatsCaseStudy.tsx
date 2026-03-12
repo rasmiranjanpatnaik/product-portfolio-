@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import './UberEatsCaseStudy.css';
@@ -203,7 +203,24 @@ const UberEatsCaseStudy: React.FC = () => {
               
               <div className="market-sources">
                 <p>
-                  <strong>Sources:</strong> <a href="#" className="source-link">Grand View Research</a>, <a href="#" className="source-link">Grand View Research</a>
+                  <strong>Sources:</strong>{' '}
+                  <a
+                    href="https://www.grandviewresearch.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="source-link"
+                  >
+                    Grand View Research
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.grandviewresearch.com/industry-analysis/ready-meals-market-report"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="source-link"
+                  >
+                    Grand View Research – Ready Meals
+                  </a>
                 </p>
               </div>
             </Col>
@@ -263,9 +280,33 @@ const UberEatsCaseStudy: React.FC = () => {
               
               <div className="audience-sources">
                 <p>
-                  <strong>Sources:</strong> 1. <a href="#" className="source-link">Statista</a>, 
-                  2. <a href="#" className="source-link">Numerator Insights</a>, 
-                  3. <a href="#" className="source-link">Uber Eats Harris Poll</a>
+                  <strong>Sources:</strong> 1.{'\u00a0'}
+                  <a
+                    href="https://www.statista.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="source-link"
+                  >
+                    Statista
+                  </a>
+                  , 2.{'\u00a0'}
+                  <a
+                    href="https://www.numerator.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="source-link"
+                  >
+                    Numerator Insights
+                  </a>
+                  , 3.{'\u00a0'}
+                  <a
+                    href="https://www.ubereats.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="source-link"
+                  >
+                    Uber Eats Harris Poll
+                  </a>
                 </p>
                 <p className="audience-note">
                   *Assumption: demographic data is similar between Cook & Eat and Heat & Eat segments.
@@ -603,7 +644,19 @@ const UberEatsCaseStudy: React.FC = () => {
                   <ul className="section-list">
                     <li>Higher WAUs picking their Packaged Meals leading to more Restaurant & Grocery store impressions</li>
                     <li>Potentially higher number of Uber One members redeeming benefits with Restaurants & Grocery stores</li>
-                    <li>Restaurants could offer their own packaged meal plans. 41% of consumers would be interested in meal kits from their favorite restaurants. (Source: <a href="#" className="source-link">Fundera by NerdWallet</a>)</li>
+                    <li>
+                      Restaurants could offer their own packaged meal plans. 41% of consumers would be interested in meal kits from their
+                      favorite restaurants. (Source:{' '}
+                      <a
+                        href="https://www.fundera.com/blog/meal-kit-statistics"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="source-link"
+                      >
+                        Fundera by NerdWallet
+                      </a>
+                      )
+                    </li>
                   </ul>
                 </div>
                 
